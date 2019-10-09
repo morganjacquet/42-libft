@@ -1,20 +1,24 @@
 /* ************************************************************************** */
 /*                                                          LE - /            */
 /*                                                              /             */
-/*   isdigit.c                                        .::    .:/ .      .::   */
+/*   ft_strlen.c                                      .::    .:/ .      .::   */
 /*                                                 +:+:+   +:    +:  +:+:+    */
-/*   By: mojacque <marvin@le-101.fr>                +:+   +:    +:    +:+     */
+/*   By: mojacque <mojacque@student.le-101.fr>      +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
-/*   Created: 2019/10/07 16:55:23 by mojacque     #+#   ##    ##    #+#       */
-/*   Updated: 2019/10/07 17:40:17 by mojacque    ###    #+. /#+    ###.fr     */
+/*   Created: 2019/10/08 11:13:18 by mojacque     #+#   ##    ##    #+#       */
+/*   Updated: 2019/10/09 12:28:42 by mojacque    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
-int		isdigit(int str)
+int		ft_strlen(const char *s)
 {
-	if (str >= '0' && str <= '9')
-		return (1);
-	else
-		return (0);
+	int i;
+
+	i = 0;
+	while (s[i] != '\0')
+	{
+		i++;
+	}
+	return (i);
 }

@@ -1,21 +1,20 @@
 /* ************************************************************************** */
 /*                                                          LE - /            */
 /*                                                              /             */
-/*   isalnum.c                                        .::    .:/ .      .::   */
+/*   ft_tolower.c                                     .::    .:/ .      .::   */
 /*                                                 +:+:+   +:    +:  +:+:+    */
-/*   By: mojacque <marvin@le-101.fr>                +:+   +:    +:    +:+     */
+/*   By: mojacque <mojacque@student.le-101.fr>      +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
-/*   Created: 2019/10/07 17:15:44 by mojacque     #+#   ##    ##    #+#       */
-/*   Updated: 2019/10/07 17:53:37 by mojacque    ###    #+. /#+    ###.fr     */
+/*   Created: 2019/10/08 12:28:19 by mojacque     #+#   ##    ##    #+#       */
+/*   Updated: 2019/10/09 10:37:58 by mojacque    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
-int		isalnum(int str)
+int		ft_tolower(int c)
 {
-	if ((str >= 'A' && str <= 'Z') || (str >= 'a' & str <= 'z') ||
-			(str >= '0' && str <= '9'))
-		return (1);
+	if (c >= 'A' && c <= 'Z')
+		return (c + 32);
 	else
-		return (0);
+		return (c);
 }

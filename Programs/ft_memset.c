@@ -1,27 +1,22 @@
 /* ************************************************************************** */
 /*                                                          LE - /            */
 /*                                                              /             */
-/*   atoi.c                                           .::    .:/ .      .::   */
+/*   ft_memset.c                                      .::    .:/ .      .::   */
 /*                                                 +:+:+   +:    +:  +:+:+    */
-/*   By: mojacque <marvin@le-101.fr>                +:+   +:    +:    +:+     */
+/*   By: mojacque <mojacque@student.le-101.fr>      +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
-/*   Created: 2019/10/07 18:11:57 by mojacque     #+#   ##    ##    #+#       */
-/*   Updated: 2019/10/07 18:15:03 by mojacque    ###    #+. /#+    ###.fr     */
+/*   Created: 2019/10/08 09:58:23 by mojacque     #+#   ##    ##    #+#       */
+/*   Updated: 2019/10/09 10:37:39 by mojacque    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
-int		atoi(char *str)
+void	*ft_memset(void *s, int c, int n)
 {
-	int i;
-	int nb;
+	char *ptr;
 
-	i = 0;
-	nb = 0;
-	while (str[i] >= '0' && str[i] <= '9')
-	{
-		nb = (nb * 10) + str[i] - '0';
-		i++;
-	}
-	return (nb);
+	ptr = (char*)s;
+	while (n-- > 0)
+		*ptr++ = c;
+	return (s);
 }

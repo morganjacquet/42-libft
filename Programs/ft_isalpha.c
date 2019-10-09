@@ -1,32 +1,20 @@
 /* ************************************************************************** */
 /*                                                          LE - /            */
 /*                                                              /             */
-/*   strncmp.c                                        .::    .:/ .      .::   */
+/*   ft_isalpha.c                                     .::    .:/ .      .::   */
 /*                                                 +:+:+   +:    +:  +:+:+    */
-/*   By: mojacque <marvin@le-101.fr>                +:+   +:    +:    +:+     */
+/*   By: mojacque <mojacque@student.le-101.fr>      +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
-/*   Created: 2019/10/07 18:05:12 by mojacque     #+#   ##    ##    #+#       */
-/*   Updated: 2019/10/07 18:06:03 by mojacque    ###    #+. /#+    ###.fr     */
+/*   Created: 2019/10/08 10:48:22 by mojacque     #+#   ##    ##    #+#       */
+/*   Updated: 2019/10/09 10:37:19 by mojacque    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
-int		strncmp(char *s1, char *s2, unsigned int n)
+int		ft_isalpha(int c)
 {
-	unsigned int i;
-
-	i = 0;
-	while (s1[i] == s2[i])
-	{
-		if (s1[i] == '\0' || s2[i] == '\0')
-		{
-			return (0);
-		}
-		i++;
-	}
-	if (i + 1 > n)
-	{
+	if ((c >= 'A' && c <= 'Z') || (c >= 'a' & c <= 'z'))
+		return (1);
+	else
 		return (0);
-	}
-	return (s1[i] - s2[i]);
 }
