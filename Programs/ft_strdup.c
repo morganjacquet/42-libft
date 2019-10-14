@@ -1,32 +1,35 @@
 /* ************************************************************************** */
 /*                                                          LE - /            */
 /*                                                              /             */
-/*   ft_strncmp.c                                     .::    .:/ .      .::   */
+/*   ft_strdup.c                                      .::    .:/ .      .::   */
 /*                                                 +:+:+   +:    +:  +:+:+    */
 /*   By: mojacque <mojacque@student.le-101.fr>      +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
-/*   Created: 2019/08/11 10:48:39 by mojacque     #+#   ##    ##    #+#       */
-/*   Updated: 2019/10/14 14:17:06 by mojacque    ###    #+. /#+    ###.fr     */
+/*   Created: 2019/10/14 16:05:35 by mojacque     #+#   ##    ##    #+#       */
+/*   Updated: 2019/10/14 16:16:56 by mojacque    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
-int		ft_strncmp(char *s1, char *s2, int n)
+#include "libft.h"
+
+char	*ft_strdup(const char *src)
 {
-	int i;
+	int		i;
+	char	*dest;
+	int		lenght;
 
 	i = 0;
-	while (s1[i] == s2[i])
+	dest = NULL;
+	lenght = ft_strlen(src);
+	dest = malloc(sizeof(char) * lenght + 1);
+	if (dest == NULL)
+		return (0);
+	while (src[i] != '\0')
 	{
-		if (s1[i] == '\0' || s2[i] == '\0')
-		{
-			return (0);
-		}
+		dest[i] = src[i];
 		i++;
 	}
-	if (i + 1 > n)
-	{
-		return (0);
-	}
-	return (s1[i] - s2[i]);
+	dest[i] = '\0';
+	return (dest);
 }

@@ -6,12 +6,14 @@
 /*   By: mojacque <mojacque@student.le-101.fr>      +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/10/11 16:23:51 by mojacque     #+#   ##    ##    #+#       */
-/*   Updated: 2019/10/11 18:23:31 by mojacque    ###    #+. /#+    ###.fr     */
+/*   Updated: 2019/10/14 11:22:17 by mojacque    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
-void	*ft_memcpy(void *dest, void *src, int n)
+#include "libft.h"
+
+void	*ft_memcpy(void *dest, const void *src, size_t n)
 {
 	char *destr;
 	char *srcr;

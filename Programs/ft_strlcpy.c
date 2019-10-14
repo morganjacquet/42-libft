@@ -1,32 +1,41 @@
 /* ************************************************************************** */
 /*                                                          LE - /            */
 /*                                                              /             */
-/*   ft_strncmp.c                                     .::    .:/ .      .::   */
+/*   ft_strlcpy.c                                     .::    .:/ .      .::   */
 /*                                                 +:+:+   +:    +:  +:+:+    */
 /*   By: mojacque <mojacque@student.le-101.fr>      +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
-/*   Created: 2019/08/11 10:48:39 by mojacque     #+#   ##    ##    #+#       */
-/*   Updated: 2019/10/14 14:17:06 by mojacque    ###    #+. /#+    ###.fr     */
+/*   Created: 2019/10/14 13:36:45 by mojacque     #+#   ##    ##    #+#       */
+/*   Updated: 2019/10/14 13:39:44 by mojacque    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
-int		ft_strncmp(char *s1, char *s2, int n)
-{
-	int i;
+#include "libft.h"
 
+int     ft_strlcpy(char * restrict dest, const char * restrict src, size_t size)
+{
+    unsigned int src_i;
+	unsigned int i;
+
+	src_i = 0;
+	while (src[src_i] != '\0')
+	{
+		++src_i;
+	}
 	i = 0;
-	while (s1[i] == s2[i])
+	if (size > 0)
 	{
-		if (s1[i] == '\0' || s2[i] == '\0')
+		while (src[i] != '\0' && i < size - 1)
 		{
-			return (0);
+			dest[i] = src[i];
+			i++;
 		}
-		i++;
+		while (i < size - 1)
+		{
+			dest[i] = '\0';
+		}
 	}
-	if (i + 1 > n)
-	{
-		return (0);
-	}
-	return (s1[i] - s2[i]);
+	dest[i] = '\0';
+	return (src_i);
 }

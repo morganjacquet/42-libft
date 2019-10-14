@@ -6,12 +6,14 @@
 /*   By: mojacque <mojacque@student.le-101.fr>      +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/10/08 09:58:23 by mojacque     #+#   ##    ##    #+#       */
-/*   Updated: 2019/10/09 10:37:39 by mojacque    ###    #+. /#+    ###.fr     */
+/*   Updated: 2019/10/14 14:15:55 by mojacque    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
-void	*ft_memset(void *s, int c, int n)
+#include "libft.h"
+
+void	*ft_memset(void *s, int c, size_t n)
 {
 	char *ptr;
 
