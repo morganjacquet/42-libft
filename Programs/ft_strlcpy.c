@@ -6,16 +6,16 @@
 /*   By: mojacque <mojacque@student.le-101.fr>      +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/10/14 13:36:45 by mojacque     #+#   ##    ##    #+#       */
-/*   Updated: 2019/10/14 13:39:44 by mojacque    ###    #+. /#+    ###.fr     */
+/*   Updated: 2019/10/17 11:30:54 by mojacque    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int     ft_strlcpy(char * restrict dest, const char * restrict src, size_t size)
+int		ft_strlcpy(char *restrict dest, const char *restrict src, size_t size)
 {
-    unsigned int src_i;
+	unsigned int src_i;
 	unsigned int i;
 
 	src_i = 0;

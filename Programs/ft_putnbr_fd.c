@@ -1,35 +1,40 @@
 /* ************************************************************************** */
 /*                                                          LE - /            */
 /*                                                              /             */
-/*   ft_strdup.c                                      .::    .:/ .      .::   */
+/*   ft_putnbr_fd.c                                   .::    .:/ .      .::   */
 /*                                                 +:+:+   +:    +:  +:+:+    */
 /*   By: mojacque <mojacque@student.le-101.fr>      +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
-/*   Created: 2019/10/14 16:05:35 by mojacque     #+#   ##    ##    #+#       */
-/*   Updated: 2019/10/17 11:28:54 by mojacque    ###    #+. /#+    ###.fr     */
+/*   Created: 2019/10/17 12:07:48 by mojacque     #+#   ##    ##    #+#       */
+/*   Updated: 2019/10/17 12:23:08 by mojacque    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strdup(const char *src)
+static void		ft_putchar(int fd, char c)
 {
-	int		i;
-	char	*dest;
-	int		lenght;
+	write(fd, &c, 1);
+}
 
-	i = 0;
-	dest = NULL;
-	lenght = ft_strlen(src);
-	dest = malloc(sizeof(char) * lenght + 1);
-	if (dest == NULL)
-		return (0);
-	while (src[i] != '\0')
+void			ft_putnbr_fd(int n, int fd)
+{
+	unsigned int i;
+
+	i = n;
+	if (n < 0)
 	{
-		dest[i] = src[i];
-		i++;
+		ft_putchar(fd, '-');
+		i = i * (-1);
 	}
-	dest[i] = '\0';
-	return (dest);
+	if (i >= 10)
+	{
+		ft_putnbr_fd(i / 10, fd);
+		ft_putnbr_fd(i % 10, fd);
+	}
+	else if (i < 10)
+	{
+		ft_putchar(fd, i + '0');
+	}
 }
