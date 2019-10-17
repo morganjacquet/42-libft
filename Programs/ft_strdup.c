@@ -6,7 +6,7 @@
 /*   By: mojacque <mojacque@student.le-101.fr>      +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/10/14 16:05:35 by mojacque     #+#   ##    ##    #+#       */
-/*   Updated: 2019/10/17 11:28:54 by mojacque    ###    #+. /#+    ###.fr     */
+/*   Updated: 2019/10/17 15:45:40 by mojacque    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -24,7 +24,7 @@ char	*ft_strdup(const char *src)
 	lenght = ft_strlen(src);
 	dest = malloc(sizeof(char) * lenght + 1);
 	if (dest == NULL)
-		return (0);
+		return (NULL);
 	while (src[i] != '\0')
 	{
 		dest[i] = src[i];

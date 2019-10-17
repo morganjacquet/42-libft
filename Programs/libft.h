@@ -6,7 +6,7 @@
 /*   By: mojacque <mojacque@student.le-101.fr>      +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/10/08 11:45:14 by mojacque     #+#   ##    ##    #+#       */
-/*   Updated: 2019/10/17 12:08:24 by mojacque    ###    #+. /#+    ###.fr     */
+/*   Updated: 2019/10/17 15:44:11 by mojacque    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -37,5 +37,6 @@ void	ft_putchar_fd(char c, int fd);
 void	ft_putstr_fd(char *s, int fd);
 void	ft_putendl_fd(char *s, int fd);
 void	ft_putnbr_fd(int n, int fd);
+void	*ft_calloc (size_t nmemb, size_t size);
 
 #endif

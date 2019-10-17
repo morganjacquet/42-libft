@@ -1,26 +1,24 @@
 /* ************************************************************************** */
 /*                                                          LE - /            */
 /*                                                              /             */
-/*   ft_strlen.c                                      .::    .:/ .      .::   */
+/*   ft_calloc.c                                      .::    .:/ .      .::   */
 /*                                                 +:+:+   +:    +:  +:+:+    */
 /*   By: mojacque <mojacque@student.le-101.fr>      +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
-/*   Created: 2019/10/08 11:13:18 by mojacque     #+#   ##    ##    #+#       */
-/*   Updated: 2019/10/17 15:52:43 by mojacque    ###    #+. /#+    ###.fr     */
+/*   Created: 2019/10/17 14:33:28 by mojacque     #+#   ##    ##    #+#       */
+/*   Updated: 2019/10/17 15:43:58 by mojacque    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlen(const char *s)
+void	*ft_calloc (size_t nmemb, size_t size)
 {
-	int i;
+	int *ptr;
 
-	i = 0;
-	while (s[i] != '\0')
-	{
-		i++;
-	}
-	return (i);
+	ptr = malloc(nmemb * size);
+	if (ptr == NULL)
+		return (NULL);
+	return (ptr);
 }
