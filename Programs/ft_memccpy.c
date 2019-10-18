@@ -1,19 +1,33 @@
 /* ************************************************************************** */
 /*                                                          LE - /            */
 /*                                                              /             */
-/*   ft_putchar_fd.c                                  .::    .:/ .      .::   */
+/*   ft_memccpy.c                                     .::    .:/ .      .::   */
 /*                                                 +:+:+   +:    +:  +:+:+    */
 /*   By: mojacque <mojacque@student.le-101.fr>      +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
-/*   Created: 2019/10/17 10:38:57 by mojacque     #+#   ##    ##    #+#       */
-/*   Updated: 2019/10/18 18:10:00 by mojacque    ###    #+. /#+    ###.fr     */
+/*   Created: 2019/10/18 21:59:04 by mojacque     #+#   ##    ##    #+#       */
+/*   Updated: 2019/10/18 23:22:44 by mojacque    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putchar_fd(char c, int fd)
+void	*ft_memccpy(void *dest, const void *src, int c, size_t n)
 {
-	write(fd, &c, 1);
+	size_t			i;
+	unsigned char	*scrr;
+	unsigned char	*destr;
+
+	i = 0;
+	scrr = (unsigned char *)src;
+	destr = (unsigned char *)dest;
+	while (i < n)
+	{
+		destr[i] = scrr[i];
+		if (scrr[i] == (unsigned char)c)
+			return (dest + i + 1);
+		i++;
+	}
+	return (NULL);
 }
