@@ -6,7 +6,7 @@
 /*   By: mojacque <mojacque@student.le-101.fr>      +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/10/14 13:36:45 by mojacque     #+#   ##    ##    #+#       */
-/*   Updated: 2019/10/18 21:57:06 by mojacque    ###    #+. /#+    ###.fr     */
+/*   Updated: 2019/10/22 22:54:28 by mojacque    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -18,7 +18,7 @@ int		ft_strlcpy(char *restrict dest, const char *restrict src, size_t size)
 	unsigned int src_i;
 	unsigned int i;
 
-	if (size == 0)
+	if (src == NULL || size == 0)
 		return (0);
 	src_i = 0;
 	while (src[src_i] != '\0')
