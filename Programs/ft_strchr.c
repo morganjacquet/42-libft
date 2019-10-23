@@ -1,30 +1,28 @@
 /* ************************************************************************** */
 /*                                                          LE - /            */
 /*                                                              /             */
-/*   ft_strlcpy.c                                     .::    .:/ .      .::   */
+/*   ft_strchr.c                                      .::    .:/ .      .::   */
 /*                                                 +:+:+   +:    +:  +:+:+    */
 /*   By: mojacque <mojacque@student.le-101.fr>      +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
-/*   Created: 2019/10/14 13:36:45 by mojacque     #+#   ##    ##    #+#       */
-/*   Updated: 2019/10/23 17:54:43 by mojacque    ###    #+. /#+    ###.fr     */
+/*   Created: 2019/10/23 18:53:48 by mojacque     #+#   ##    ##    #+#       */
+/*   Updated: 2019/10/23 20:36:50 by mojacque    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_strlcpy(char *restrict dest, const char *restrict src, size_t size)
+char	*ft_strchr(const char *s, int c)
 {
-	unsigned int i;
+	char	*str;
 
-	if (src == NULL || size == 0)
-		return (0);
-	i = 0;
-	while (src[i] != '\0' && i < size - 1)
+	str = (char *)s;
+	while (*str != c)
 	{
-		dest[i] = src[i];
-		i++;
+		if (*str == '\0')
+			return (NULL);
+		str++;
 	}
-	dest[i] = '\0';
-	return (ft_strlen(src));
+	return (str);
 }
