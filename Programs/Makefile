@@ -26,10 +26,12 @@ SRCS	= 	ft_atoi.c		\
 			ft_strlcat.c	\
 			ft_strnstr.c	\
 			ft_strrchr.c	\
+			ft_substr.c		\
+			ft_strjoin.c
 			
 OBJS	= $(SRCS:.c=.o)
 CC		= gcc
-CFLAGS	= -Wall -Wextra -Werror
+CFLAGS	= -Wall -Wextra
 RM		= rm -f
 NAME	= libft.a
 
