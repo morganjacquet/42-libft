@@ -29,6 +29,8 @@ Recoder un ensemble de fonctions de la libc telles que décrites dans leur man 
 | **ft_strlcat** 	| Ajoute la chaîne src terminée par ***NULL*** à la fin de ***dst***. Il ajoutera au plus la taille - ***strlen*** (***dst***) - ***1 octet***, ***NULL*** terminant le résultat.	|  Renvoient la longueur totale de la chaîne créer cela signifie la longueur initiale de ***dst*** plus la longueur de ***src***. |
 | **ft_strnstr** 	|  Localise la première occurrence de la chaîne ***s2*** complétée par un caractère nul dans la chaîne ***s1***, où pas plus de n caractères ne sont cherché.	|  Si s2 est une chaîne vide, ***s1*** est renvoyé. Si ***s2*** ne se trouve nulle part dans ***s1***, la valeur ***NULL*** est renvoyée; sinon, un pointeur sur le premier caractère de la première occurrence de ***s2*** est renvoyé.	|
 | **ft_atoi** 	| Convertit le début de la chaîne pointée par ***nptr*** en entier de type ***int***.	|  Un entier résultat de la conversion.	|
+| **ft_calloc** 	| Alloue la mémoire nécessaire pour un tableau de ***nmemb*** éléments de ***size*** octets, et renvoie un pointeur vers la mémoire allouée. Cette zone est remplie avec des zéros.	|  Renvoient un pointeur vers la mémoire allouée, qui est correctement alignée pour n'importe quel type intégré. Si elles échouent, elles renvoient NULL. NULL peut également être renvoyé par un appel réussi avec ***nmemb*** ou ***size*** égal à zéro.	|
+| **ft_strdup** 	| Renvoie un pointeur sur une nouvelle chaîne de caractères qui est dupliquée depuis ***s***.	|  Renvoie un pointeur sur la chaîne dupliquée. NULL est renvoyé s'il n'y avait pas assez de mémoire et errno contient le code d'erreur.	|
 <br>
 
 ## Partie 2
@@ -36,7 +38,16 @@ Coder un certain nombre de fonctions absentes de la libc ou présentes dans une
 
 | Fonctions       | Description    | Valeur renvoyee |
 | ------|-----|-----|
-
+| **ft_substr** | Alloue (avec malloc(3)) et retourne une chaine de caractères issue de la chaine donnée en argument. Cette nouvelle chaine commence à l’index ***start*** et a pour taille maximale ***len*** | Renvoie la nouvelle chaine de caractere ou NULL si l’allocation échoue. |
+| **ft_strjoin** | Alloue (avec malloc(3)) et retourne une nouvelle chaine, résultat de la concaténation de ***s1*** et ***s2***. | Renvoie la nouvelle chaine de caractères ou NULL si l’allocation échoue. |
+| **ft_strtrim** | Alloue (avec malloc(3)) et retourne une copie de la chaine de caractères donnée en argument, sans les caractères spécifiés dans le set donné en argument au début et à la fin de la chaine de caractères. | Renvoie la chaine de caractères trimmée ou NULL si l’allocation échoue. |
+| **ft_split** | Alloue (avec malloc(3)) et retourne un tableau de chaines de caracteres obtenu en séparant ***s*** à l’aide du caractère ***c***, utilisé comme délimiteur. Le tableau doit être terminé par NULL. | Renvoie le tableau de nouvelles chaines de caractères, résultant du découpage ou NULL si l’allocation échoue. |
+| **ft_itoa** | Alloue (avec malloc(3)) et retourne une chaine de caractères représentant l’integer reçu en argument. Les nombres négatifs doivent être gérés. | Renvoie la chaine de caractères représentant l’integer ou NULL si l’allocation échoue. |
+| **ft_strmapi** | Applique la fonction ***f*** à chaque caractère de la chaine de caractères passée en argument pour créer une nouvelle chaine de caractères (avec malloc(3)) résultant des applications successives de ***f***. | Renvoie la chaine de caractères résultant des applications successives de ***f***. Retourne NULL si l’allocation échoue |
+| **ft_putchar_fd** | Écrit le caractère c sur le file descriptor donné. | **-** |
+| **ft_putstr_fd** | Écrit la chaine de caractères s sur le file descriptor donné. | **-** |
+| **ft_putendl_fd** | Écrit La chaine de caractères s sur le file descriptor donné, suivie d’un retour à la ligne. |**-** |
+| **ft_putnbr_fd** | Écrit l’integer n sur le file descriptor donné. |**-** |
 <br>
 
 ## Partie bonus
