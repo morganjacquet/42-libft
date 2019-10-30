@@ -6,7 +6,7 @@
 /*   By: mojacque <mojacque@student.le-101.fr>      +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/10/08 11:45:14 by mojacque     #+#   ##    ##    #+#       */
-/*   Updated: 2019/10/25 08:00:27 by mojacque    ###    #+. /#+    ###.fr     */
+/*   Updated: 2019/10/30 20:16:12 by mojacque    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -31,7 +31,7 @@ int		ft_tolower (int c);
 size_t	ft_strlen (const char *s);
 int		ft_atoi (const char *nptr);
 int		ft_strncmp (const char *s1, const char *s2, size_t n);
-int		ft_strlcpy(char *restrict dst, const char *restrict src, size_t size);
+int		ft_strlcpy(char *dst, const char *src, size_t size);
 char	*ft_strdup (const char *s);
 void	ft_putchar_fd(char c, int fd);
 void	ft_putstr_fd(char *s, int fd);
@@ -43,7 +43,7 @@ void	*ft_memmove (void *dest, const void *src, size_t n);
 void	*ft_memchr (const void *s, int c, size_t n);
 int		ft_memcmp (const void *s1, const void *s2, size_t n);
 char	*ft_strchr (const char *s, int c);
-size_t	ft_strlcat(char *restrict dst, const char *restrict src, size_t dstsize);
+size_t	ft_strlcat(char *dst, const char *src, size_t dstsize);
 char	*ft_strnstr(const char	*big, const char *little, size_t len);
 char	*ft_strrchr(const char *s, int c);
 char	*ft_substr(char const *s, unsigned int start, size_t len);
