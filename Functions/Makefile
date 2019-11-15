@@ -39,7 +39,11 @@ CFLAGS	= -Wall -Wextra -Werror
 RM		= rm -f
 NAME	= libft.a
 
-.c.o:	$(CC) $(CFLAGS) -c $< -o $(<:.c=.o)
+HEADER	=	libft.h
+HFLAG	=	-I $(HEADER)
+
+%.o: %.c $(HEADER)
+	gcc $(CFLAGS) $(HFLAG) -o $@ -c $<
 
 $(NAME):	$(OBJS)
 		ar -rc $(NAME) $(OBJS)

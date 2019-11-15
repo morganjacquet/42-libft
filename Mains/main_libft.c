@@ -6,7 +6,7 @@
 /*   By: mojacque <mojacque@student.le-101.fr>      +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/10/07 14:46:37 by dgascon      #+#   ##    ##    #+#       */
-/*   Updated: 2019/11/14 20:10:39 by mojacque    ###    #+. /#+    ###.fr     */
+/*   Updated: 2019/11/15 01:29:25 by mojacque    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -215,7 +215,7 @@ void	print_strlcpy(char *dst, const char *src, size_t len)
 	char *dst1, *dst2;
 	dst1 = ft_strdup(dst);
 	dst2 = ft_strdup(dst);
-	(strlcpy(dst1, src, len) == ft_strlcpy(dst2, src, len)) ? SUCCESS : FAILED;
+	(strlcpy(dst1, src, len) == (unsigned long)ft_strlcpy(dst2, src, len)) ? SUCCESS : FAILED;
 	printf("\n\t{%s, %s, %zu} = {%s, %s}", dst, src, len, dst1, dst2);
 	NORMAL;
 	free(dst1);
@@ -320,21 +320,6 @@ char	f_strmapi(unsigned int i, char c)
 	else if(c >= 'A' && c <= 'Z')
 		return (c + 32);
 	return (c);
-}
-
-void	f_del(void *s)
-{
-	FAILED;
-	printf(" f_del : Pass |");
-	UNKNOWN;
-}
-
-void	f_iter(void *s)
-{
-	(void) s;
-	NORMAL;
-	printf(" f_iter : Pass |");
-	UNKNOWN;
 }
 
 void	*f_map(void *s)
@@ -531,6 +516,14 @@ int		main(int size, char **arg)
 			free(str);
 			printf("\n\t{%s, %s} = {%s}", "\t \t   \t\t\t\t", "\t ", str = ft_strtrim("\t \t   \t\t\t\t", "\t "));
 			free(str);
+			NORMAL;
+		}
+		if (size == 1 || !strcmp(arg[1], "ft_split") || !strcmp(arg[1], "p2"))
+		{	printf("\nSplit :");
+			UNKNOWN;
+			print_split("Les ch'ti a mon cul", ' ');
+			print_split("Lamasticot", 'a');
+			print_split("      split       this for   me  !       ", ' ');
 			NORMAL;
 		}
 		if (size == 1 || !strcmp(arg[1], "ft_itoa") || !strcmp(arg[1], "p2"))

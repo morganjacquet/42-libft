@@ -6,7 +6,7 @@
 /*   By: mojacque <mojacque@student.le-101.fr>      +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/10/17 11:58:28 by mojacque     #+#   ##    ##    #+#       */
-/*   Updated: 2019/10/30 18:34:05 by mojacque    ###    #+. /#+    ###.fr     */
+/*   Updated: 2019/11/15 02:49:45 by mojacque    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -15,14 +15,8 @@
 
 void	ft_putendl_fd(char *s, int fd)
 {
-	int i;
-
 	if (s == NULL)
 		return ;
-	i = 0;
-	while (s[i] != '\0')
-	{
-		write(fd, &s[i++], 1);
-	}
+	write(fd, s, ft_strlen(s));
 	write(fd, "\n", 1);
 }
